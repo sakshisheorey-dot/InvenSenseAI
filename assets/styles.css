@@ -1,6 +1,11 @@
 /* =========================
    GLOBAL STYLING
 ========================= */
+.stApp{
+    background:
+    radial-gradient(circle at top left,#2563eb 0%,#020617 35%),
+    #020617;
+}
 
 .main {
     background-color: #F8FAFC;
@@ -29,7 +34,10 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 4rem;
-    background: white;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    margin: 20px 40px;
     border-bottom: 1px solid #E5E7EB;
 }
 
@@ -67,10 +75,10 @@ header {
 }
 
 .hero-title {
-    font-size: 64px;
+    font-size: 72px;
     font-weight: 800;
     line-height: 1.1;
-    color: #111827;
+    color: white;
 }
 
 .hero-subtitle {
@@ -125,7 +133,10 @@ header {
 }
 
 .feature-card {
-    background: white;
+    background: rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(15px);
+    color:white;
     border-radius: 20px;
     padding: 30px;
     min-height: 250px;
@@ -155,7 +166,8 @@ header {
 .stats-section {
     background: #2563EB;
     color: white;
-    padding: 70px;
+    padding:25px;
+    border-radius:20px;
     border-radius: 30px;
     margin-top: 80px;
 }

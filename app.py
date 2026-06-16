@@ -73,10 +73,36 @@ markdown recommendations.
 c1,c2,c3 = st.columns([2,2,2])
 
 with c2:
-    st.button(
-        "🚀 Start Free Analysis",
-        use_container_width=True
-    )
+    st.markdown("""
+<div style='text-align:center;margin-top:40px;'>
+
+<a href='#'
+style='
+background:#2563eb;
+padding:15px 35px;
+border-radius:12px;
+color:white;
+font-weight:700;
+text-decoration:none;
+margin-right:15px;
+'>
+Start Free Analysis
+</a>
+
+<a href='#'
+style='
+border:2px solid #2563eb;
+padding:15px 35px;
+border-radius:12px;
+color:#2563eb;
+font-weight:700;
+text-decoration:none;
+'>
+Book Demo
+</a>
+
+</div>
+""", unsafe_allow_html=True)
 
 st.write("")
 

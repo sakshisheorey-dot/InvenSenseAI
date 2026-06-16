@@ -1,5 +1,8 @@
 import streamlit as st
 
+if st.button("🚀 Start Free Analysis"):
+    st.switch_page("pages/Login.py")
+
 st.title("Login")
 
 email = st.text_input("Email")

@@ -173,7 +173,7 @@ with c2:
     with col2:
 
         if st.button(
-        "⏭ Continue to Dashboard",
+        "Continue to Dashboard",
         use_container_width=True
         ):
             st.switch_page(

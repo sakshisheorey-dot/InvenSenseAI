@@ -57,3 +57,8 @@ def render_sidebar():
             "pages/8_Settings.py",
             label="⚙️ Settings"
         )
+ 
+st.markdown("---")
+
+if st.button("🚪 Logout", use_container_width=True):
+        st.switch_page("app.py")

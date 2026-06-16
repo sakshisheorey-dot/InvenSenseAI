@@ -1,58 +1,60 @@
 import streamlit as st
 
-def sidebar():
+st.markdown("""
+<style>
+
+[data-testid="stSidebarNav"] {
+    display: none;
+}
+
+</style>
+""", unsafe_allow_html=True)
+
+def render_sidebar():
 
     with st.sidebar:
 
-        st.markdown("# 📦 InvenSense AI")
+        st.title("📦 InvenSense AI")
 
         st.markdown("---")
 
         st.page_link(
-            "pages/dashboard.py",
+            "pages/1_Dashboard.py",
             label="🏠 Dashboard"
         )
 
         st.page_link(
-            "pages/inventory.py",
+            "pages/2_Inventory_Management.py",
             label="📦 Inventory"
         )
 
         st.page_link(
-            "pages/health.py",
+            "pages/3_Inventory_Health.py",
             label="❤️ Health Tracker"
         )
 
         st.page_link(
-            "pages/recommendations.py",
+            "pages/4_AI_Recommendations.py",
             label="🤖 AI Recommendations"
         )
 
         st.page_link(
-            "pages/markdown.py",
+            "pages/5_Markdown_Simulator.py",
             label="📉 Markdown Simulator"
         )
 
         st.page_link(
-            "pages/analytics.py",
+            "pages/6_Analytics.py",
             label="📊 Analytics"
         )
 
         st.page_link(
-            "pages/reports.py",
+            "pages/7_Reports.py",
             label="📄 Reports"
         )
 
         st.page_link(
-            "pages/settings.py",
+            "pages/8_Settings.py",
             label="⚙️ Settings"
         )
-
-        st.markdown("---")
-
-        if st.button("🚪 Logout"):
-
-            st.session_state.logged_in = False
-
-            st.switch_page("app.py")
 

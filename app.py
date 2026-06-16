@@ -113,18 +113,19 @@ st.markdown(
 AI-Powered Fashion Retail Intelligence
 </h3>
 
-<h1 class='main-title'>
-Reduce Dead Stock.<br>
-<span class='gold'>
-Recover Lost Profit.
-</span>
-</h1>
+<div class='hero-container'>
 
-<p class='subtitle'>
-Transform excess inventory into opportunity using intelligent
-inventory analytics, AI-powered markdown recommendations and
-real-time business insights.
-</p>
+<div class='hero-tag'>
+AI-Powered Fashion Retail Intelligence
+</div>
+
+<div class='hero-headline'>
+Reduce Dead Stock.
+</div>
+
+<div class='hero-highlight'>
+Recover Lost Profit.
+</div>
 
 </div>
 """,

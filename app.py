@@ -1,35 +1,33 @@
-import streamlit as st
 
-# =====================================
-# PAGE CONFIG
-# =====================================
+import streamlit as st
 
 st.set_page_config(
     page_title="InvenSense AI",
     page_icon="📦",
-    layout="wide"
+    layout="wide",
+    initial_sidebar_state="collapsed"
 )
 
-# =====================================
+# -------------------------
 # LOAD CSS
-# =====================================
+# -------------------------
 
-def load_css():
-    with open("assets/styles.css") as f:
-        st.markdown(
-            f"<style>{f.read()}</style>",
-            unsafe_allow_html=True
-        )
+with open("assets/styles.css") as f:
+    st.markdown(
+        f"<style>{f.read()}</style>",
+        unsafe_allow_html=True
+    )
 
-load_css()
-
-# =====================================
+# -------------------------
 # NAVBAR
-# =====================================
+# -------------------------
 
 st.markdown("""
 <div class="navbar">
-    <div class="logo">InvenSense AI</div>
+    <div class="logo">
+        InvenSense AI
+    </div>
+
     <div class="nav-links">
         <span>Features</span>
         <span>Pricing</span>
@@ -40,220 +38,240 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# =====================================
-# HERO
-# =====================================
+# -------------------------
+# HERO SECTION
+# -------------------------
 
 st.markdown("""
 <div class="hero">
 
-<div class="hero-badge">
-🚀 AI Powered Inventory Intelligence
-</div>
-
-<div class="hero-title">
-Reduce Dead Stock.<br>
-Recover Lost Profit.
-</div>
-
-<div class="hero-subtitle">
-InvenSense AI helps fashion retailers identify
-slow-moving inventory, predict stock risks,
-and maximize profit recovery through intelligent
-markdown recommendations.
-</div>
-
-</div>
-""", unsafe_allow_html=True)
-
-# =====================================
-# CTA BUTTONS
-# =====================================
-
-c1,c2,c3 = st.columns([2,2,2])
-
-with c2:
-    st.markdown("""
-<div style='text-align:center;margin-top:40px;'>
-
-<a href='#'
-style='
-background:#2563eb;
-padding:15px 35px;
-border-radius:12px;
-color:white;
-font-weight:700;
-text-decoration:none;
-margin-right:15px;
-'>
-Start Free Analysis
-</a>
-
-<a href='#'
-style='
-border:2px solid #2563eb;
-padding:15px 35px;
-border-radius:12px;
-color:#2563eb;
-font-weight:700;
-text-decoration:none;
-'>
-Book Demo
-</a>
-
-</div>
-""", unsafe_allow_html=True)
-
-st.write("")
-
-c1,c2,c3 = st.columns([2,2,2])
-
-with c2:
-    st.button(
-        "📅 Book a Demo",
-        use_container_width=True
-    )
-
-# =====================================
-# FEATURES
-# =====================================
-
-st.markdown(
-"""
-<div class="section-title">
-Powerful Features
-</div>
-""",
-unsafe_allow_html=True
-)
-
-col1,col2,col3 = st.columns(3)
-
-with col1:
-    st.markdown("""
-    <div class="feature-card">
-        <div class="feature-icon">📦</div>
-        <div class="feature-title">
-        Inventory Health Tracking
-        </div>
-        <div class="feature-text">
-        Monitor inventory risk levels,
-        identify overstock situations,
-        and prevent dead stock.
-        </div>
+    <div class="hero-badge">
+        AI-Powered Fashion Retail Intelligence
     </div>
-    """,
-    unsafe_allow_html=True)
+
+    <div class="hero-title">
+        Reduce Dead Stock.<br>
+        <span class="gold-text">
+            Recover Lost Profit.
+        </span>
+    </div>
+
+    <div class="hero-subtitle">
+        Transform excess inventory into opportunity using
+        intelligent inventory analytics, AI-powered markdown
+        recommendations, and real-time business insights.
+    </div>
+
+</div>
+""", unsafe_allow_html=True)
+
+# -------------------------
+# CTA BUTTONS
+# -------------------------
+
+col1,col2,col3 = st.columns([1,2,1])
 
 with col2:
+
     st.markdown("""
-    <div class="feature-card">
-        <div class="feature-icon">🤖</div>
-        <div class="feature-title">
-        AI Recommendations
-        </div>
-        <div class="feature-text">
-        Receive intelligent markdown
-        suggestions to maximize
-        revenue recovery.
-        </div>
+    <div class="cta-container">
+
+        <button class="gold-btn">
+            Start Free Analysis
+        </button>
+
+        <button class="outline-btn">
+            Book Demo
+        </button>
+
     </div>
-    """,
-    unsafe_allow_html=True)
+    """, unsafe_allow_html=True)
 
-with col3:
-    st.markdown("""
-    <div class="feature-card">
-        <div class="feature-icon">📊</div>
-        <div class="feature-title">
-        Advanced Analytics
-        </div>
-        <div class="feature-text">
-        Explore trends, demand forecasts,
-        and inventory performance
-        with interactive dashboards.
-        </div>
-    </div>
-    """,
-    unsafe_allow_html=True)
-
-# =====================================
-# STATS SECTION
-# =====================================
-
-st.write("")
-st.write("")
+# -------------------------
+# FEATURES SECTION
+# -------------------------
 
 st.markdown("""
-<div class="stats-section">
-
-<center>
-
-<h1>Trusted by Retailers Worldwide</h1>
-
-</center>
-
+<div class="section-heading">
+Powerful Features
 </div>
-""",
-unsafe_allow_html=True)
+""", unsafe_allow_html=True)
 
-c1,c2,c3,c4 = st.columns(4)
+c1,c2,c3 = st.columns(3)
 
 with c1:
-    st.metric("Products Analyzed", "1.2M+")
+
+    st.markdown("""
+    <div class="feature-card">
+
+        <div class="feature-icon">
+            📦
+        </div>
+
+        <div class="feature-title">
+            Inventory Health Tracking
+        </div>
+
+        <div class="feature-text">
+            Monitor inventory risk levels,
+            identify slow-moving products,
+            and prevent dead stock accumulation.
+        </div>
+
+    </div>
+    """, unsafe_allow_html=True)
 
 with c2:
-    st.metric("Profit Recovered", "$12M+")
+
+    st.markdown("""
+    <div class="feature-card">
+
+        <div class="feature-icon">
+            🤖
+        </div>
+
+        <div class="feature-title">
+            AI Recommendations
+        </div>
+
+        <div class="feature-text">
+            Receive intelligent markdown
+            suggestions that maximize
+            recovery while preserving margins.
+        </div>
+
+    </div>
+    """, unsafe_allow_html=True)
 
 with c3:
-    st.metric("Inventory Optimized", "95%")
 
-with c4:
-    st.metric("Retail Partners", "500+")
+    st.markdown("""
+    <div class="feature-card">
 
-# =====================================
-# WHY INVENTSENSE
-# =====================================
+        <div class="feature-icon">
+            📊
+        </div>
 
-st.markdown(
-"""
-<div class="section-title">
+        <div class="feature-title">
+            Advanced Analytics
+        </div>
+
+        <div class="feature-text">
+            Explore demand trends,
+            inventory performance,
+            and category risk analysis.
+        </div>
+
+    </div>
+    """, unsafe_allow_html=True)
+
+# -------------------------
+# PLATFORM PREVIEW
+# -------------------------
+
+st.markdown("""
+<div class="section-heading">
+Platform Preview
+</div>
+""", unsafe_allow_html=True)
+
+st.markdown("""
+<div class="preview-card">
+
+<div class="preview-grid">
+
+<div class="preview-box">
+Inventory Health
+</div>
+
+<div class="preview-box">
+AI Recommendations
+</div>
+
+<div class="preview-box">
+Markdown Simulator
+</div>
+
+<div class="preview-box">
+Analytics
+</div>
+
+</div>
+
+</div>
+""", unsafe_allow_html=True)
+
+# -------------------------
+# STATS
+# -------------------------
+
+st.markdown("""
+<div class="section-heading">
+Trusted by Retailers Worldwide
+</div>
+""", unsafe_allow_html=True)
+
+s1,s2,s3,s4 = st.columns(4)
+
+with s1:
+    st.metric("Products Analyzed","1.2M+")
+
+with s2:
+    st.metric("Profit Recovered","$12M+")
+
+with s3:
+    st.metric("Inventory Optimized","95%")
+
+with s4:
+    st.metric("Retail Partners","500+")
+
+# -------------------------
+# BENEFITS
+# -------------------------
+
+st.markdown("""
+<div class="section-heading">
 Why InvenSense AI?
 </div>
-""",
-unsafe_allow_html=True
-)
+""", unsafe_allow_html=True)
 
-left,right = st.columns([1,1])
+left,right = st.columns(2)
 
 with left:
-    st.success("✔ Reduce inventory holding costs")
-    st.success("✔ Improve inventory turnover")
-    st.success("✔ Increase margin recovery")
-    st.success("✔ Prevent dead stock accumulation")
+
+    st.success("Reduce inventory holding costs")
+    st.success("Improve inventory turnover")
+    st.success("Increase margin recovery")
+    st.success("Prevent dead stock accumulation")
 
 with right:
-    st.info("📈 Predict demand trends")
-    st.info("📉 Simulate markdown strategies")
-    st.info("📦 Track inventory health")
-    st.info("🤖 AI-powered business insights")
 
-# =====================================
+    st.info("Predict demand trends")
+    st.info("AI-powered recommendations")
+    st.info("Simulate markdown strategies")
+    st.info("Real-time inventory visibility")
+
+# -------------------------
 # FOOTER
-# =====================================
+# -------------------------
 
 st.markdown("""
 <div class="footer">
 
-<h3>InvenSense AI</h3>
+<h2>InvenSense AI</h2>
 
-Helping retailers transform inventory
+<p>
+Helping fashion retailers transform inventory
 into profit using artificial intelligence.
+</p>
 
+<p>
 support@invensense.ai
+</p>
 
+<p>
 © 2026 InvenSense AI
+</p>
 
 </div>
-""",
-unsafe_allow_html=True)
+""", unsafe_allow_html=True)

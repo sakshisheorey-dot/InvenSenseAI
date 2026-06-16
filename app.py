@@ -1,277 +1,289 @@
-
 import streamlit as st
+
+# =====================================================
+# PAGE CONFIG
+# =====================================================
 
 st.set_page_config(
     page_title="InvenSense AI",
     page_icon="📦",
-    layout="wide",
-    initial_sidebar_state="collapsed"
+    layout="wide"
 )
 
-# -------------------------
-# LOAD CSS
-# -------------------------
+# =====================================================
+# CUSTOM CSS
+# =====================================================
 
-with open("assets/styles.css") as f:
+st.markdown("""
+<style>
+
+.stApp{
+    background-color:#0B0B0B;
+}
+
+.main-title{
+    font-size:70px;
+    font-weight:800;
+    text-align:center;
+    color:white;
+}
+
+.gold{
+    color:#D4AF37;
+}
+
+.subtitle{
+    text-align:center;
+    color:#B0B0B0;
+    font-size:22px;
+    max-width:900px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    color:white;
+    font-size:42px;
+    font-weight:700;
+    margin-top:50px;
+    margin-bottom:30px;
+}
+
+.feature-card{
+    background:#151515;
+    padding:25px;
+    border-radius:20px;
+    border:1px solid #2A2A2A;
+}
+
+.metric-card{
+    background:#151515;
+    padding:20px;
+    border-radius:20px;
+    text-align:center;
+}
+
+.footer{
+    text-align:center;
+    color:#A0A0A0;
+    margin-top:80px;
+    padding:40px;
+}
+
+</style>
+""", unsafe_allow_html=True)
+
+# =====================================================
+# NAVBAR
+# =====================================================
+
+nav1, nav2 = st.columns([3,2])
+
+with nav1:
     st.markdown(
-        f"<style>{f.read()}</style>",
+        "<h1 style='color:#D4AF37;'>InvenSense AI</h1>",
         unsafe_allow_html=True
     )
 
-# -------------------------
-# NAVBAR
-# -------------------------
+with nav2:
+    st.markdown(
+        """
+        <div style="text-align:right;padding-top:20px;color:white;">
+        Features &nbsp;&nbsp;&nbsp;
+        Pricing &nbsp;&nbsp;&nbsp;
+        About &nbsp;&nbsp;&nbsp;
+        Contact &nbsp;&nbsp;&nbsp;
+        Sign In
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
-st.markdown("""
-<div class="navbar">
-    <div class="logo">
-        InvenSense AI
-    </div>
+st.divider()
 
-    <div class="nav-links">
-        <span>Features</span>
-        <span>Pricing</span>
-        <span>About</span>
-        <span>Contact</span>
-        <span>Sign In</span>
-    </div>
-</div>
-""", unsafe_allow_html=True)
+# =====================================================
+# HERO
+# =====================================================
 
-# -------------------------
-# HERO SECTION
-# -------------------------
+st.markdown(
+"""
+<div style='text-align:center;'>
 
-st.markdown("""
-<div class="hero">
+<h3 class='gold'>
+AI-Powered Fashion Retail Intelligence
+</h3>
 
-    <div class="hero-badge">
-        AI-Powered Fashion Retail Intelligence
-    </div>
+<h1 class='main-title'>
+Reduce Dead Stock.<br>
+<span class='gold'>
+Recover Lost Profit.
+</span>
+</h1>
 
-    <div class="hero-title">
-        Reduce Dead Stock.<br>
-        <span class="gold-text">
-            Recover Lost Profit.
-        </span>
-    </div>
-
-    <div class="hero-subtitle">
-        Transform excess inventory into opportunity using
-        intelligent inventory analytics, AI-powered markdown
-        recommendations, and real-time business insights.
-    </div>
+<p class='subtitle'>
+Transform excess inventory into opportunity using intelligent
+inventory analytics, AI-powered markdown recommendations and
+real-time business insights.
+</p>
 
 </div>
-""", unsafe_allow_html=True)
+""",
+unsafe_allow_html=True
+)
 
-# -------------------------
-# CTA BUTTONS
-# -------------------------
+st.write("")
 
-col1,col2,col3 = st.columns([1,2,1])
-
-with col2:
-
-    st.markdown("""
-    <div class="cta-container">
-
-        <button class="gold-btn">
-            Start Free Analysis
-        </button>
-
-        <button class="outline-btn">
-            Book Demo
-        </button>
-
-    </div>
-    """, unsafe_allow_html=True)
-
-# -------------------------
-# FEATURES SECTION
-# -------------------------
-
-st.markdown("""
-<div class="section-heading">
-Powerful Features
-</div>
-""", unsafe_allow_html=True)
-
-c1,c2,c3 = st.columns(3)
-
-with c1:
-
-    st.markdown("""
-    <div class="feature-card">
-
-        <div class="feature-icon">
-            📦
-        </div>
-
-        <div class="feature-title">
-            Inventory Health Tracking
-        </div>
-
-        <div class="feature-text">
-            Monitor inventory risk levels,
-            identify slow-moving products,
-            and prevent dead stock accumulation.
-        </div>
-
-    </div>
-    """, unsafe_allow_html=True)
+c1,c2,c3 = st.columns([1,2,1])
 
 with c2:
+    b1,b2 = st.columns(2)
 
+    with b1:
+        st.button(
+            "🚀 Start Free Analysis",
+            use_container_width=True
+        )
+
+    with b2:
+        st.button(
+            "📅 Book Demo",
+            use_container_width=True
+        )
+
+# =====================================================
+# FEATURES
+# =====================================================
+
+st.markdown(
+"<div class='section-title'>Powerful Features</div>",
+unsafe_allow_html=True
+)
+
+f1,f2,f3 = st.columns(3)
+
+with f1:
     st.markdown("""
-    <div class="feature-card">
+    <div class='feature-card'>
+    <h2>📦</h2>
+    <h3>Inventory Health Tracking</h3>
 
-        <div class="feature-icon">
-            🤖
-        </div>
-
-        <div class="feature-title">
-            AI Recommendations
-        </div>
-
-        <div class="feature-text">
-            Receive intelligent markdown
-            suggestions that maximize
-            recovery while preserving margins.
-        </div>
-
+    Monitor inventory risk levels,
+    identify slow-moving products,
+    and prevent dead stock accumulation.
     </div>
-    """, unsafe_allow_html=True)
+    """,
+    unsafe_allow_html=True)
 
-with c3:
-
+with f2:
     st.markdown("""
-    <div class="feature-card">
+    <div class='feature-card'>
+    <h2>🤖</h2>
+    <h3>AI Recommendations</h3>
 
-        <div class="feature-icon">
-            📊
-        </div>
-
-        <div class="feature-title">
-            Advanced Analytics
-        </div>
-
-        <div class="feature-text">
-            Explore demand trends,
-            inventory performance,
-            and category risk analysis.
-        </div>
-
+    Receive intelligent markdown
+    suggestions that maximize
+    recovery while preserving margins.
     </div>
-    """, unsafe_allow_html=True)
+    """,
+    unsafe_allow_html=True)
 
-# -------------------------
+with f3:
+    st.markdown("""
+    <div class='feature-card'>
+    <h2>📊</h2>
+    <h3>Advanced Analytics</h3>
+
+    Explore demand trends,
+    inventory performance,
+    and category risk analysis.
+    </div>
+    """,
+    unsafe_allow_html=True)
+
+# =====================================================
 # PLATFORM PREVIEW
-# -------------------------
+# =====================================================
 
-st.markdown("""
-<div class="section-heading">
-Platform Preview
-</div>
-""", unsafe_allow_html=True)
+st.markdown(
+"<div class='section-title'>Platform Preview</div>",
+unsafe_allow_html=True
+)
 
-st.markdown("""
-<div class="preview-card">
+preview1,preview2 = st.columns(2)
 
-<div class="preview-grid">
+with preview1:
+    st.info("📦 Inventory Health Tracker")
+    st.info("🤖 AI Recommendations")
 
-<div class="preview-box">
-Inventory Health
-</div>
+with preview2:
+    st.info("📉 Markdown Simulator")
+    st.info("📊 Analytics Dashboard")
 
-<div class="preview-box">
-AI Recommendations
-</div>
-
-<div class="preview-box">
-Markdown Simulator
-</div>
-
-<div class="preview-box">
-Analytics
-</div>
-
-</div>
-
-</div>
-""", unsafe_allow_html=True)
-
-# -------------------------
+# =====================================================
 # STATS
-# -------------------------
+# =====================================================
 
-st.markdown("""
-<div class="section-heading">
-Trusted by Retailers Worldwide
-</div>
-""", unsafe_allow_html=True)
+st.markdown(
+"<div class='section-title'>Trusted by Retailers Worldwide</div>",
+unsafe_allow_html=True
+)
 
-s1,s2,s3,s4 = st.columns(4)
+m1,m2,m3,m4 = st.columns(4)
 
-with s1:
-    st.metric("Products Analyzed","1.2M+")
+m1.metric("Products Analyzed","1.2M+")
+m2.metric("Profit Recovered","$12M+")
+m3.metric("Inventory Optimized","95%")
+m4.metric("Retail Partners","500+")
 
-with s2:
-    st.metric("Profit Recovered","$12M+")
-
-with s3:
-    st.metric("Inventory Optimized","95%")
-
-with s4:
-    st.metric("Retail Partners","500+")
-
-# -------------------------
+# =====================================================
 # BENEFITS
-# -------------------------
+# =====================================================
 
-st.markdown("""
-<div class="section-heading">
-Why InvenSense AI?
-</div>
-""", unsafe_allow_html=True)
+st.markdown(
+"<div class='section-title'>Why InvenSense AI?</div>",
+unsafe_allow_html=True
+)
 
 left,right = st.columns(2)
 
 with left:
-
     st.success("Reduce inventory holding costs")
     st.success("Improve inventory turnover")
     st.success("Increase margin recovery")
     st.success("Prevent dead stock accumulation")
 
 with right:
-
     st.info("Predict demand trends")
     st.info("AI-powered recommendations")
     st.info("Simulate markdown strategies")
     st.info("Real-time inventory visibility")
 
-# -------------------------
+# =====================================================
 # FOOTER
-# -------------------------
+# =====================================================
 
-st.markdown("""
-<div class="footer">
+st.markdown(
+"""
+<div class='footer'>
 
-<h2>InvenSense AI</h2>
+<h2 style='color:#D4AF37;'>
+InvenSense AI
+</h2>
 
-<p>
 Helping fashion retailers transform inventory
 into profit using artificial intelligence.
-</p>
 
-<p>
+<br><br>
+
 support@invensense.ai
-</p>
 
-<p>
+<br><br>
+
 © 2026 InvenSense AI
-</p>
 
 </div>
-""", unsafe_allow_html=True)
+""",
+unsafe_allow_html=True
+)
+
+

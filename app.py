@@ -166,6 +166,19 @@ with c2:
             "📅 Book Demo",
             use_container_width=True
         )
+    st.write("")
+
+    col1,col2,col3 = st.columns([1,2,1])
+
+    with col2:
+
+        if st.button(
+        "⏭ Continue to Dashboard",
+        use_container_width=True
+        ):
+            st.switch_page(
+            "pages/1_Dashboard.py"
+            )
 
 # =====================================================
 # FEATURES

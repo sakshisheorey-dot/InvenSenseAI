@@ -1,16 +1,16 @@
 import streamlit as st
 
-st.markdown("""
-<style>
-
-[data-testid="stSidebarNav"] {
-    display: none;
-}
-
-</style>
-""", unsafe_allow_html=True)
-
 def render_sidebar():
+
+    st.markdown("""
+    <style>
+
+    [data-testid="stSidebarNav"]{
+        display:none;
+    }
+
+    </style>
+    """, unsafe_allow_html=True)
 
     with st.sidebar:
 
@@ -57,4 +57,3 @@ def render_sidebar():
             "pages/8_Settings.py",
             label="⚙️ Settings"
         )
-
